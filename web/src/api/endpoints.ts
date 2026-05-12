@@ -1,0 +1,60 @@
+export const API = {
+  AUTH: {
+    REGISTER: '/auth/register',
+    LOGIN: '/auth/login',
+    LOGOUT: '/auth/logout',
+    REFRESH: '/auth/refresh',
+    ME: '/auth/me',
+  },
+  PRODUCTS: {
+    LIST: '/products',
+    CREATE: '/products',
+    GET: (id: string) => `/products/${id}`,
+    UPDATE: (id: string) => `/products/${id}`,
+  },
+  INGREDIENTS: {
+    LIST: '/ingredients',
+    CREATE: '/ingredients',
+    GET: (id: string) => `/ingredients/${id}`,
+    UPDATE: (id: string) => `/ingredients/${id}`,
+  },
+  RECIPES: {
+    CREATE: '/recipes',
+    GET_BY_PRODUCT: (productId: string) => `/recipes/products/${productId}`,
+    COST: (productId: string) => `/recipes/products/${productId}/cost`,
+  },
+  PURCHASES: {
+    CREATE: '/purchases',
+    LIST: '/purchases',
+    DETAIL: (id: string) => `/purchases/${id}`,
+    DELETE: (id: string) => `/purchases/${id}`,
+    UPDATE: (id: string) => `/purchases/${id}`,
+    CREATE_BY_IMAGE: '/purchases/image',
+    PREVIEW_BY_IMAGE: '/purchases/image/preview',
+  },
+  SELLINGS: {
+    LIST: '/sellings',
+    CREATE: '/sellings',
+    GET: (id: string) => `/sellings/${id}`,
+    UPDATE: (id: string) => `/sellings/${id}`,
+  },
+  INVENTORY: {
+    LOW_STOCK: '/inventory/low-stock',
+    INGREDIENT: (id: string) => `/inventory/ingredients/${id}`,
+    PRODUCT: (id: string) => `/inventory/products/${id}`,
+  },
+  SUPPLIERS: {
+    LIST: '/suppliers',
+    CREATE: '/suppliers',
+    GET: (id: string) => `/suppliers/${id}`,
+    UPDATE: (id: string) => `/suppliers/${id}`,
+    DELETE: (id: string) => `/suppliers/${id}`,
+  },
+  CUSTOMERS: {
+    LIST: '/customers',
+    CREATE: '/customers',
+    GET: (id: string) => `/customers/${id}`,
+    UPDATE: (id: string) => `/customers/${id}`,
+    DELETE: (id: string) => `/customers/${id}`,
+  },
+} as const

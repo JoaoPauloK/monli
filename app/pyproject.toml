@@ -1,0 +1,39 @@
+# Copyright (c) 2026 Monli. All rights reserved.
+
+[project]
+name = "monli"
+version = "0.1.0"
+description = "Backend for Monli, a financial management platform for small food businesses."
+readme = "ROADMAP.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic",
+    "fastapi",
+    "passlib[bcrypt]>=1.7.4",
+    "psycopg[binary]",
+    "pydantic",
+    "pydantic-settings",
+    "python-jose[cryptography]",
+    "redis",
+    "sqlmodel",
+    "uvicorn[standard]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx",
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
